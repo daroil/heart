@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #FF9F00;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.heart {
+    width: 3em;
+    height: 3em;
+    position: relative;
+    background-color: #4B0082;
+    transform: rotate(-45deg);
+    animation: beat 1s infinite alternate ease-in-out;
+}
+
+.heart:before, .heart:after {
+    content: '';
+    width: 3em;
+    height: 3em;
+    background-color: #4B0082;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart:before {
+    top: -1.5em;
+    left: 0;
+}
+
+.heart:after {
+    left: 1.5em;
+    top: 0;
+}
+
+@keyframes beat {
+    0% { transform: scale(1) rotate(-45deg); }
+    100% { transform: scale(1.2) rotate(-45deg); }
+}
+
+.container{
+    display: flex;
+    column-gap: 3em;
+    row-gap: 3em;
+    flex-wrap: wrap;
+    max-width: 70vw;
+    justify-content: center;
+}
+
+.hidden{
+    display: none;
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3em;
+    font-weight: bold;
+    /*color: #4B0082; */
+    color: white;
+    text-align: left;
+    border: #4B0082 2px solid;
+    /*border-radius: 40px;*/
+    padding: 1em;
+    /*background-color: #D3D3D3;*/
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+
+    background: rgba(75, 0, 130, 0.5); /* Semi-transparent indigo */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), inset 0 0 8px rgba(255, 255, 255, 0.3); /* Outer and inner shadows for depth */
+    backdrop-filter: blur(8px); /* Applies a blur effect to the background */
+
+}
+
+@media screen and (max-width: 768px)
+{
+    .text{
+        font-size: 1.5em;
+        padding: 0.5em;
+    }
+}
